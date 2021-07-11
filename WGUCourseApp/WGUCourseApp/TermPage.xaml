@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+             x:Class="WGUCourseApp.TermPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="{Binding Title}"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label x:Name="termStart" HorizontalOptions="Center"/>
+                <Label x:Name="termEnd" HorizontalOptions="Center"/>
+                </StackLayout>
+                <Label Text="Click the course to view details." HorizontalOptions="Center"/>
+                <ListView x:Name="coursesListView" Margin="0,50,0,50" BackgroundColor="#e4e4e4">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell IsEnabled="True">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                    <Label Text="{Binding CourseName}" VerticalOptions="Center" TextColor="Black"/>
+                                </StackLayout>
+                            </ViewCell>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Text="Add"
+                        x:Name="addBtn"
+                        BackgroundColor="#003057"
+                        TextColor="white"
+                        Clicked="addBtn_Clicked"/>
+                <Button Text="Edit"
+                        x:Name="editBtn"
+                        BackgroundColor="#509e2f"
+                        TextColor="white"
+                        Clicked="editBtn_Clicked"/>
+                <Button Text="Delete"
+                        x:Name="deleteBtn"
+                        Margin="0,0,0,20"
+                        BackgroundColor="#4986ad"
+                        TextColor="white"
+                        Clicked="deleteBtn_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+             x:Class="WGUCourseApp.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Label Text="Program Planner"
+               FontSize="40"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+                   TextColor="#003057"/>
+
+            <Label Text="Click a term below for details"
+                   FontSize="18"
+                   HorizontalOptions="Center"/>
+            <ListView x:Name="termsListView" BackgroundColor="#D9D9D6" Margin="40,30,40,30">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <Label Text="{Binding TermName}" VerticalOptions="Center" FontSize="16" TextColor="#003057"/>
+                                <Label Text="{Binding Start,StringFormat='{}{0:MM/dd/yyyy}'}" VerticalOptions="Center" FontSize="16" TextColor="#003057"/>
+                                <Label Text=" - " VerticalOptions="Center" FontSize="16" TextColor="#003057"/>
+                                <Label Text="{Binding End,StringFormat='{}{0:MM/dd/yyyy}'}" VerticalOptions="Center" FontSize="16" TextColor="#003057"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name ="newTermBtn" Text="Add New Term" Margin="40,0,40,50" BackgroundColor="#4986AD" TextColor="white" Clicked="newTermBtn_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

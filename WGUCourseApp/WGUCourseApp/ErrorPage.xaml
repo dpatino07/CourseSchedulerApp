@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+             x:Class="WGUCourseApp.InputError">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Text="Error: Page not saved." HorizontalOptions="Center"/>
+            <Label Text="Please make sure you follow these below:" HorizontalOptions="Center"/>
+            <Label Text="- All Fields must be filled out"/>
+            <Label Text="- Email Address must be a valid email address"/>
+            <Label Text="- End Date must not be earlier than Start Date"/>
+            <Button Text="Ok"
+                    x:Name="okBtn"
+                    BackgroundColor="#003057"
+                    TextColor="White"
+                    Margin="0,30,0,0"
+                    Clicked="okBtn_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

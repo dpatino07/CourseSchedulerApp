@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+             x:Class="WGUCourseApp.CoursePage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20,20,20,0">
+                <StackLayout>
+                    <Label Text="{Binding Title}"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Grid Margin="5" RowSpacing="5">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Course Name:" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                            <Entry Grid.Column="1" PlaceholderColor="LightBlue" Placeholder="Enter Course Name " x:Name="courseTitle" HorizontalOptions="FillAndExpand" VerticalOptions="Center" MinimumWidthRequest="5000"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1" HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Course Status:" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                            <Picker Grid.Column="1" Title="Course Status" x:Name="courseStatus">
+                                <Picker.Items>
+                                    <x:String>In Progress</x:String>
+                                    <x:String>Completed</x:String>
+                                    <x:String>Dropped</x:String>
+                                    <x:String>Plan To Take</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Grid>
+
+                        <Grid Grid.Row="2" HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Start Date:" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                            <DatePicker Grid.Column="1" x:Name="startDate" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </Grid>
+                        <Grid Grid.Row="3" HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="End Date:" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                            <DatePicker Grid.Column="1" x:Name="endDate" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Row="4" HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Instructor Name:" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                            <Entry Grid.Column="1" PlaceholderColor="LightBlue" Placeholder="Enter Instructor Name" x:Name="instName" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Row="5" HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Instructor Phone:" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                            <Entry Grid.Column="1" PlaceholderColor="LightBlue" Placeholder="Enter Instructor Phone" x:Name="instPhone" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Row="6" HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Instructor Email:" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                            <Entry Grid.Column="1" PlaceholderColor="LightBlue" Placeholder="Enter Instructor Email" x:Name="instEmail" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Row="7" HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Notes:" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                            <Entry Grid.Column="1" PlaceholderColor="LightBlue" Placeholder="Enter Notes" x:Name="notes" HorizontalOptions="FillAndExpand" VerticalOptions="Center" MinimumWidthRequest="5000"/>
+                        </Grid>
+                        <Grid Grid.Row="8" HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Share Notes" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                            <Button Grid.Column="1" Text="Share" x:Name="shareNotes" Clicked="shareNotes_Clicked"/>
+                        </Grid>
+
+                        <Grid Grid.Row="9" HorizontalOptions="FillAndExpand" HeightRequest="50">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="7*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Get Notified:" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                            <Picker Grid.Column="1" Title="Notifications:" x:Name="pickerNotifications">
+                                <Picker.Items>
+                                    <x:String>No</x:String>
+                                    <x:String>Yes</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Grid>
+                    </Grid>
+                    <Button Text="Assessments"
+                            x:Name="assessBtn"
+                            BackgroundColor="#C69214"
+                            TextColor="White"
+                            Clicked="assessBtn_Clicked"/>
+                    <Button Text="Save"
+                            x:Name="editBtn"
+                            BackgroundColor="#003057"
+                            TextColor="White"
+                            Clicked="editBtn_Clicked"/>
+                    <Button Text="Delete"
+                            x:Name="deleteBtn"
+                            BackgroundColor="#509e2f"
+                            TextColor="White"
+                            Clicked="deleteBtn_Clicked"/>
+                    <Button Text="Cancel"
+                            x:Name="cancelBtn"
+                            BackgroundColor="#4986ad"
+                            TextColor="White"
+                            Clicked="cancelBtn_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

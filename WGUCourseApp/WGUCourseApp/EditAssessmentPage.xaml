@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+             x:Class="WGUCourseApp.EditAssessmentPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="Edit Assessment" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="#003057" Margin="0,50,0,0"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="{Binding Title}"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Grid Margin="10" RowSpacing="10">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Assessment Name:" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        <Entry Grid.Column="1" PlaceholderColor="LightBlue" Placeholder="Assessment Name" x:Name="assessName" HorizontalOptions="FillAndExpand" VerticalOptions="Center" MinimumWidthRequest="5000"/>
+                    </Grid>
+
+                    <Grid Grid.Row="1" HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Assessment Type:" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        <Picker Grid.Column="1" Title="Assessment Type:" x:Name="assessType">
+                            <Picker.Items>
+                                <x:String>Objective</x:String>
+                                <x:String>Performance</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Grid>
+
+                    <Grid Grid.Row="2" HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Due Date:" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        <DatePicker Grid.Column="1" x:Name="dueDate" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                    </Grid>
+
+                    <Grid Grid.Row="3" HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Get Notified:" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                        <Picker Grid.Column="1" Title="Notifications:" x:Name="pickerNotifications">
+                            <Picker.Items>
+                                <x:String>No</x:String>
+                                <x:String>Yes</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Grid>
+                </Grid>
+                <Button Text="Save"
+                        x:Name="saveBtn"
+                        BackgroundColor="#003057"
+                        TextColor="White"
+                        Clicked="saveBtn_Clicked"/>
+                <Button Text="Delete"
+                        x:Name="deleteBtn"
+                        BackgroundColor="#509e2f"
+                        TextColor="White"
+                        Clicked="deleteBtn_Clicked"/>
+                <Button Text="Cancel"
+                        x:Name="cancelBtn"
+                        BackgroundColor="#4986ad"
+                        TextColor="White"
+                        Clicked="cancelBtn_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

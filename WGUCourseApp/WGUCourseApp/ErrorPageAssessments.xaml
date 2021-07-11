@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+             x:Class="WGUCourseApp.AssessmentError">
+    <ContentPage.Content>
+        <StackLayout
+             VerticalOptions="Center" 
+             HorizontalOptions="Center"
+            Margin="30,0,30,0">
+            <Label Text="Error:"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label Text="You can only have 1 Objective and 1 Performance Assessment per course."
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+            <Button Text="Ok"
+                    x:Name="okBtn"
+                    BackgroundColor="#003057"
+                    TextColor="White"
+                    Margin="0,30,0,0"
+                    Clicked="okBtn_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

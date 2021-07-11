@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+             x:Class="WGUCourseApp.AddTerm">
+    <ContentPage.Content>
+        <StackLayout Margin="20,0,20,0" VerticalOptions="Center">
+            <Entry Placeholder="Enter Term Name" 
+               x:Name="termName"
+                   Margin="0,0,0,30"/>
+            <Label Text="Term Start" />
+            <DatePicker x:Name="startDate" Format="D"></DatePicker>
+            <Label Text="Term End" />
+            <DatePicker x:Name="endDate" Format="D"></DatePicker>
+            <Button Text="Save"
+                    x:Name="saveBtn"
+                    Margin="0,30,0,0"
+                    BackgroundColor="#003057"
+                    TextColor="white"
+                    Clicked="saveBtn_Clicked"/>
+            <Button Text="Cancel"
+                    x:Name="exitBtn"
+                    BackgroundColor="#4986ad"
+                    TextColor="white"
+                    Clicked="exitBtn_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

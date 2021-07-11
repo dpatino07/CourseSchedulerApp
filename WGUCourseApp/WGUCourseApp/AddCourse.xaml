@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+             x:Class="WGUCourseApp.AddCourse">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20,20,20,0">
+                <Label Text="Add Course Info"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                       FontAttributes="Bold"
+                       FontSize="20"
+                       TextColor="#003057"/>
+                <Entry Placeholder="Course Title" 
+               x:Name="courseTitle"/>
+                <Picker Title="Course Status" x:Name="courseStatus">
+                    <Picker.Items>
+                        <x:String>In Progress</x:String>
+                        <x:String>Completed</x:String>
+                        <x:String>Dropped</x:String>
+                        <x:String>Plan To Take</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="Start Date" />
+                <DatePicker x:Name="startDate" Format="D"></DatePicker>
+                <Label Text="End Date" />
+                <DatePicker x:Name="endDate" Format="D"></DatePicker>
+                <Entry Placeholder="Course Instructor" 
+               x:Name="instName"/>
+                <Entry Placeholder="Instructor Email" 
+               x:Name="instEmail"/>
+                <Entry Placeholder="Instructor Phone" 
+               x:Name="instPhone"/>
+                <Entry Placeholder="Notes" 
+               x:Name="notes"/>
+                <Picker Title="Get Notifications" x:Name="pickerNotifications">
+                    <Picker.Items>
+                        <x:String>Yes</x:String> 
+                        <x:String>No</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Button Text="Save"
+                        x:Name="saveBtn"
+                        BackgroundColor="#003057"
+                        TextColor="white"
+                        Clicked="saveBtn_Clicked"/>
+                <Button Text="Exit"
+                        x:Name="exitBtn"
+                        BackgroundColor="#4986ad"
+                        Margin="0,0,0,30"
+                        TextColor="white"
+                        Clicked="exitBtn_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
